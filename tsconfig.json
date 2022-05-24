@@ -15,6 +15,11 @@
 		"jsx": "preserve",
 		"incremental": true
 	},
-	"include": ["**/*.ts", "**/*.tsx", "src/App.js"],
+	"include": [
+		"**/*.ts",
+		"**/*.tsx",
+		"src/App.js",
+		"src/contexts/ContextProvider.js"
+	],
 	"exclude": ["node_modules"]
 }
