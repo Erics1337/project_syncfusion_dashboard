@@ -8,7 +8,7 @@ import { useStateContext } from '../contexts/ContextProvider'
 import { IoMdHeartEmpty } from 'react-icons/io'
 
 const Sidebar = () => {
-	const { activeMenu } = useStateContext()
+	const { activeMenu, setActiveMenu } = useStateContext()
 	const activeLink =
 		'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2'
 	const normalLink =
@@ -22,7 +22,7 @@ const Sidebar = () => {
 						<Link
 							to='/'
 							className='items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900'
-							onClick={() => {}}>
+							onClick={() => setActiveMenu(false)}>
 							<SiShopware className='text-3xl' />
 							<span>Shoppy</span>
 						</Link>
@@ -31,7 +31,13 @@ const Sidebar = () => {
 							position='BottomCenter'>
 							<button
 								type='button'
-								onClick={() => {}}
+								onClick={() =>
+									// get previous state with callback function as first argument of setState
+									setActiveMenu(
+										(prevActiveMenu: boolean) =>
+											!prevActiveMenu
+									)
+								}
 								className='text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden'>
 								<MdOutlineCancel />
 							</button>
@@ -47,7 +53,12 @@ const Sidebar = () => {
 									<NavLink
 										to={`/${link.name}`}
 										key={link.name}
-										onClick={() => {}}
+										onClick={() =>
+											setActiveMenu(
+												(prevActiveMenu: boolean) =>
+													!prevActiveMenu
+											)
+										}
 										className={({ isActive }) =>
 											isActive ? activeLink : normalLink
 										}>
