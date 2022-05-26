@@ -16,9 +16,9 @@ import {
 } from '../../data/dummy'
 
 type Props = {
-	width: string
-	height: string
-	currentMode: string
+	width?: string
+	height?: string
+	currentMode?: string
 }
 
 const Stacked = ({ currentMode, width, height }: Props) => {
