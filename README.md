@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This is a code repository for the corresponding video tutorial.
+This is a code repository for the corresponding [video tutorial](https://www.youtube.com/watch?v=jx5hdo50a2M&list=PLtisOZsxayjEqUb5OnOqRn5q7OFms6ElV&index=4&t=698s).
 
 ## Stay up to date with new projects
 
