@@ -8,7 +8,8 @@ import { useStateContext } from '../contexts/ContextProvider'
 import { IoMdHeartEmpty } from 'react-icons/io'
 
 const Sidebar = () => {
-	const { activeMenu, setActiveMenu, screenSize } = useStateContext()
+	const { activeMenu, setActiveMenu, screenSize, currentColor } =
+		useStateContext()
 
 	const activeLink =
 		'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2'
@@ -20,7 +21,7 @@ const Sidebar = () => {
 	}
 
 	return (
-		<div className='z-10 bg-white ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10'>
+		<div className='z-10 bg-white ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 dark:bg-secondary-dark-bg'>
 			{activeMenu && (
 				<>
 					<div className='flex justify-between items-center'>
@@ -64,6 +65,11 @@ const Sidebar = () => {
 													!prevActiveMenu
 											)
 										}
+										style={({ isActive }) => ({
+											backgroundColor: isActive
+												? currentColor
+												: '',
+										})}
 										className={({ isActive }) =>
 											isActive ? activeLink : normalLink
 										}>

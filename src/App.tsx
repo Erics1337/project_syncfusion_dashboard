@@ -25,6 +25,7 @@ import {
 import './App.css'
 
 import { useStateContext } from './contexts/ContextProvider'
+import { Theme } from '@syncfusion/ej2-react-charts'
 
 const App = () => {
 	const {
@@ -55,9 +56,10 @@ const App = () => {
 						style={{ zIndex: '1000' }}>
 						<TooltipComponent content='Settings'>
 							<button
+								onClick={() => setThemeSettings(true)}
 								type='button'
 								className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white rounded-full'
-								style={{ background: 'blue' }}>
+								style={{ background: currentColor }}>
 								<FiSettings />
 							</button>
 						</TooltipComponent>
@@ -126,6 +128,7 @@ const App = () => {
 								<Route path='/stacked' element={<Stacked />} />
 							</Routes>
 						</div>
+						{themeSettings && <ThemeSettings />}
 					</div>
 				</div>
 			</BrowserRouter>

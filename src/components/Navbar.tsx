@@ -36,6 +36,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }: Props) => (
 const Navbar = () => {
 	const {
 		activeMenu,
+		currentColor,
 		setActiveMenu,
 		isClicked,
 		setIsClicked,
@@ -65,29 +66,29 @@ const Navbar = () => {
 				customFunc={() =>
 					setActiveMenu((prevActiveMenu: boolean) => !prevActiveMenu)
 				}
-				color='blue'
-				dotColor='blue'
+				color={currentColor}
+				dotColor={currentColor}
 				icon={<AiOutlineMenu />}
 			/>
 			<div className='flex'>
 				<NavButton
 					title='Menu'
 					customFunc={() => handleClick('cart' as string)}
-					color='blue'
-					dotColor='blue'
+					color={currentColor}
+					dotColor={currentColor}
 					icon={<FiShoppingCart />}
 				/>
 				<NavButton
 					title='Menu'
 					customFunc={() => handleClick('chat' as string)}
-					color='blue'
+					color={currentColor}
 					dotColor='#03c9D7'
 					icon={<BsChatLeft />}
 				/>
 				<NavButton
 					title='Menu'
 					customFunc={() => handleClick('notification' as string)}
-					color='blue'
+					color={currentColor}
 					dotColor='#03c9D7'
 					icon={<RiNotification3Line />}
 				/>
